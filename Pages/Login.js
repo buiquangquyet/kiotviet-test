@@ -15,6 +15,11 @@ class Login extends BasePage {
         return this;
     }
 
+    clickLoginSale(){
+        $("#loginNewSale").click();
+        return this;
+    }
+
 }
 
 module.exports = new Login();
