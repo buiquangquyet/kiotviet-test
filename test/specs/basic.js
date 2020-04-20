@@ -4,7 +4,7 @@ const DashBoard = require('../../Pages/DashBoard.js')
 const Invoices = require('../../Pages/Invoices.js')
 const Sales = require('../../Pages/Sales.js')
 describe('webdriver.io page', () => {
-    it('create order',function () {
+    it('page create order',function () {
         Login.requestUrl('https://delivery.kvpos.com:59918/')
             .setUserName('admin')
             .setPassword('123')
