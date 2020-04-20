@@ -11,7 +11,7 @@ describe('webdriver.io page', () => {
             .clickLoginSale();
 
         for (i = 0; i < 10; i++) {
-            Sales.addCustomer('anh');
+            Sales.addCustomer('tun');
             //Sales.checkDelivery();
             Sales.addToCart();
             Sales.createOrder();
