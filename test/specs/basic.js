@@ -9,7 +9,11 @@ describe('webdriver.io page', () => {
             .setUserName('admin')
             .setPassword('123')
             .clickLoginSale();
+
         Sales.addCustomer();
+        //Sales.checkDelivery();
+        Sales.addToCart();
+        Sales.createOrder();
         Sales.pause(30)
 
     })

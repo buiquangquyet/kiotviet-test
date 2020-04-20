@@ -8,15 +8,44 @@ class Sales extends BasePage {
 
     addCustomer(){
         $('.fa-search').waitForDisplayed({timeout:20000})
-        this.pause(5);
+        this.pause(6);
         $("#customerSearchInput").click();
         this.pause(1);
-        $("#customerSearchInput").setValue('quyet');
+        $("#customerSearchInput").setValue('quy');
         this.pause(1);
         $("body > div:nth-child(2) > div > div.wrap-content > div.col-right > div.col-right-content > div.col-right-container > div:nth-child(1) > div.customer-search > customer-search-component > div > div > div > div > div > ul > li").click()
-        this.pause(50)
         return this;
     }
+
+    checkDelivery(){
+
+        var selector = $("#delivery");
+        $("#delivery").isSelected(selector, function(err, isSelected) {
+            if(isSelected) {
+                $("#delivery").click(selector);
+            }
+        });
+
+        //$("#delivery").click();
+        return this;
+    }
+
+    addToCart(){
+        $("#productListWrapper > ks-swiper-container > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > ul > li:nth-child(1) > a").click();
+        $("#productListWrapper > ks-swiper-container > div > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > ul > li:nth-child(2) > a").click();
+        return this;
+    }
+
+    createOrder(){
+        $("#saveTransaction").click();
+    }
+
+    cancelPrint(){
+
+    }
+
+
+
 }
 
 module.exports = new Sales();
