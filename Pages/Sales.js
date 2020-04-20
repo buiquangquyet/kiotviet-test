@@ -6,12 +6,12 @@ class Sales extends BasePage {
         return browser.getTitle();
     }
 
-    addCustomer(){
+    addCustomer(name = 'quy'){
         $('.fa-search').waitForDisplayed({timeout:20000})
         this.pause(6);
         $("#customerSearchInput").click();
         this.pause(1);
-        $("#customerSearchInput").setValue('quy');
+        $("#customerSearchInput").setValue(name);
         this.pause(1);
         $("body > div:nth-child(2) > div > div.wrap-content > div.col-right > div.col-right-content > div.col-right-container > div:nth-child(1) > div.customer-search > customer-search-component > div > div > div > div > div > ul > li").click()
         return this;
@@ -41,7 +41,10 @@ class Sales extends BasePage {
     }
 
     cancelPrint(){
-
+        this.pause(2);
+        $(".cancel-button").click();
+        this.pause(2);
+        $(".cancel-button").click();
     }
 
 

@@ -10,10 +10,20 @@ describe('webdriver.io page', () => {
             .setPassword('123')
             .clickLoginSale();
 
-        Sales.addCustomer();
-        //Sales.checkDelivery();
-        Sales.addToCart();
-        Sales.createOrder();
+        for (i = 0; i < 10; i++) {
+            Sales.addCustomer('anh');
+            //Sales.checkDelivery();
+            Sales.addToCart();
+            Sales.createOrder();
+            Sales.pause(2)
+            //Sales.cancelPrint();
+        }
+
+        // Sales.addCustomer();
+        // //Sales.checkDelivery();
+        // Sales.addToCart();
+        // Sales.createOrder();
+        // Sales.cancelPrint();
         Sales.pause(30)
 
     })
